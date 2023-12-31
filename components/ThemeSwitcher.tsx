@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
-import { DesktopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -11,6 +11,7 @@ function ThemeSwitcher() {
 
   useEffect(() => {
     setMounted(true);
+    setTheme("dark");
   }, []);
 
   if (!mounted) return null; // avoid rehydration errors
